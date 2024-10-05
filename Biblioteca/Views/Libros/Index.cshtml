@@ -29,7 +29,7 @@
                 <td>@libro.Autor</td>
                 <td>@libro.AnioPublicacion</td>
                 <td>@libro.Genero</td>
-                <td>@libro.Disponible ? "Sí" : "No"</td>
+                <td>@(libro.Disponible ? "Si" : "No")</td> 
                 <td>
                     <a class="btn btn-info" asp-action="Edit" asp-route-id="@libro.Id">Editar</a> |
                     <a class="btn btn-secondary" asp-action="Details" asp-route-id="@libro.Id">Detalles</a> |

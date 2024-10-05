@@ -34,9 +34,13 @@
 
     <div class="form-group">
         <label asp-for="Disponible" class="control-label"></label>
-        <input asp-for="Disponible" class="form-control" type="checkbox" />
+        <select asp-for="Disponible" class="form-control">
+            <option value="true">Sí</option>
+            <option value="false">No</option>
+        </select>
         <span asp-validation-for="Disponible" class="text-danger"></span>
     </div>
+
 
     <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
     <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
