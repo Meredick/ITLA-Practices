@@ -29,11 +29,13 @@
                 <td>@libro.Autor</td>
                 <td>@libro.AnioPublicacion</td>
                 <td>@libro.Genero</td>
-                <td>@(libro.Disponible ? "Si" : "No")</td> 
+                <td>@(libro.Disponible ? "Si" : "No")</td>
                 <td>
                     <a class="btn btn-info" asp-action="Edit" asp-route-id="@libro.Id">Editar</a> |
                     <a class="btn btn-secondary" asp-action="Details" asp-route-id="@libro.Id">Detalles</a> |
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@libro.Id">Eliminar</a>
+                    <form asp-action="Delete" asp-route-id="@libro.Id" method="post" style="display:inline;" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este libro?');">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
                 </td>
             </tr>
         }
